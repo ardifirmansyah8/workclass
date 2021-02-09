@@ -9,7 +9,7 @@ export const useJobList = (): [
   number,
   jobType[],
   (page: number) => void,
-  (value: string) => void
+  (value: string | salaryType, type: string) => void
 ] => {
   const [loading, setLoading] = useState<boolean>(false);
   const [jobs, setJobs] = useState<jobType[]>([]);
@@ -43,8 +43,6 @@ export const useJobList = (): [
         d => d.salary_from >= min && d.salary_to <= max
       );
     }
-
-    console.log(filteredData);
 
     if (filteredData.length > 0) {
       getJobList(1, filteredData);
