@@ -20,6 +20,7 @@ const CardJob: FC<Props> = ({ job }) => {
   return (
     <Card
       className="job-card pointer"
+      data-cy="card"
       onClick={() => handleClickDetail(job.job_id)}
     >
       <div className="flex-column">
